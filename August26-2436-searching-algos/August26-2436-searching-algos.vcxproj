@@ -127,12 +127,16 @@
   <ItemGroup>
     <ClCompile Include="demos.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RNGWrapper.cpp" />
     <ClCompile Include="searchAlgos.cpp" />
+    <ClCompile Include="Timer.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="demos.h" />
+    <ClInclude Include="RNGWrapper.h" />
     <ClInclude Include="searchAlgos.h" />
+    <ClInclude Include="Timer.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

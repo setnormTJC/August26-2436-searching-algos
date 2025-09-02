@@ -9,14 +9,34 @@
 
 #include"demos.h"
 #include"utils.h"
+#include "RNGWrapper.h"
 
 int main()
 {
-	//demoStringSearch();
-	// 
-	auto listOfRandomNumbers = generateListOfNRandomNumbers(100); 
-	printListOfNumbers(listOfRandomNumbers);
-	
-	demoNumberSearch(); 
+	/*ex: 100 random numbers, 1'000, 10'000, etc.*/
+	std::vector<int> elementCounts =
+	{
+		100,
+		1'000,
+		10'000,
+		100'000
+	};
+
+	RNGWrapper rng; 
+
+
+	for (const auto& N : elementCounts)
+	{
+		auto listOfRandomNumbers = rng.randList(0, N, N);
+		//auto listOfRandomNumbers = generateListOfNRandomNumbers(N);
+		printListOfNumbers(listOfRandomNumbers, " ");
+
+		std::system("pause");
+
+		//demoNumberSearch();
+
+	}
+
+
 }
 
