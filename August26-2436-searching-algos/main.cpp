@@ -16,7 +16,7 @@ int main()
 	// 
 	auto listOfRandomNumbers = generateListOfNRandomNumbers(100); 
 	printListOfNumbers(listOfRandomNumbers);
-
+	
 	demoNumberSearch(); 
 }
 
