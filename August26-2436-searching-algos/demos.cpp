@@ -1,4 +1,5 @@
 #include "demos.h"
+#include"Timer.h"
 #include"utils.h"
 #include<random>
 
@@ -34,8 +35,22 @@ void demoStringSearch()
     }
 }
 
-int demoNumberSearch()
-{
 
-    return 0; //for now! change later  
+void demoTimerFunctionality()
+{
+    Timer timer;
+
+    timer.start(); 
+
+    /*insert algo to benchmark*/
+    constexpr int iterCount = 100'000'000; //BEWARE of integer overflow!
+
+    for (int i = 0; i < iterCount; ++i)
+    {
+        //do nuthin' but "count" 
+    }
+
+    timer.stop(); 
+
+    //timer.writeNAndExecutionTimeToFile()
 }

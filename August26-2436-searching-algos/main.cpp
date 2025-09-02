@@ -13,6 +13,11 @@
 
 int main()
 {
+
+	demoTimerFunctionality(); 
+
+	std::system("pause");
+
 	/*ex: 100 random numbers, 1'000, 10'000, etc.*/
 	std::vector<int> elementCounts =
 	{
