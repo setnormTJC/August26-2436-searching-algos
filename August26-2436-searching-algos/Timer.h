@@ -20,5 +20,12 @@ public:
 	void stop();
 
 	void writeNAndExecutionTimeToFile(const int N, const std::string& filename);
+
 };
+
+//class AlgoTimer : public Timer //probably a better way to go about it 
+//{
+//	void writeNAndExecutionTimeToFile(const int N, const std::string& filename);
+//};
+
 

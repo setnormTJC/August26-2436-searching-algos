@@ -16,8 +16,9 @@ void Timer::stop()
 
 	executionTimeInNanoseconds = (endTimePoint - startTimePoint).count();
 
-	std::cout << std::setprecision(2) << std::scientific  //requires double arg
-				<< "Whatever ya just did took this many nanoseconds: " << (double)executionTimeInNanoseconds << "\n";
+	//std::cout << std::setprecision(2) << std::scientific  //requires double arg
+	//			<< "Whatever ya just did took this many nanoseconds: " 
+	//	<< (double)executionTimeInNanoseconds << "\n";
 }
 
 void Timer::writeNAndExecutionTimeToFile(const int N, const std::string& filename)

@@ -43,7 +43,7 @@ void demoTimerFunctionality()
     timer.start(); 
 
     /*insert algo to benchmark*/
-    constexpr int iterCount = 100'000'000; //BEWARE of integer overflow!
+    constexpr int iterCount = 1'000'000'000; //BEWARE of integer overflow!
 
     for (int i = 0; i < iterCount; ++i)
     {

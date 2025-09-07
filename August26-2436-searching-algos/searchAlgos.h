@@ -22,5 +22,20 @@ int sequentiallySearch(const std::vector <T>& thangs,
 	return -1; //NOT an index that is legitimate in typical array indexing 
 }
 
+template<typename T> 
+int miracleSearch(const std::vector <T>& thangs,
+	const T& thangToSearchFor)
+{
+	bool isFound = false; 
+
+	while (!isFound)
+	{
+		//pray that the gods come down and find our value for us ... 
+	}
+}
+
+
+
+
 
 

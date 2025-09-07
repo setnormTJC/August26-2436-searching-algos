@@ -15,7 +15,9 @@ private:
 public: 
 
 	RNGWrapper(); 
-	/*example call: randList(0, 100, 10) -> generates 10 random numbers between 0 and 100*/
+	/*example call: randList(0, 100, 10) -> generates 10 random numbers between 0 and 100
+	* @returns a list of random numbers 
+	*/
 	std::vector<int> randList(const int min, const int max, const int N);
 
 	/*Generates a random number between (inclusive?) MIN and MAX*/

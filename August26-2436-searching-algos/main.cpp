@@ -10,13 +10,12 @@
 #include"demos.h"
 #include"utils.h"
 #include "RNGWrapper.h"
+#include "Timer.h"
 
 int main()
 {
 
-	demoTimerFunctionality(); 
-
-	std::system("pause");
+	//demoTimerFunctionality(); 
 
 	/*ex: 100 random numbers, 1'000, 10'000, etc.*/
 	std::vector<int> elementCounts =
@@ -29,27 +28,38 @@ int main()
 	};
 
 	RNGWrapper rng; 
+	constexpr int NUMBER_OF_EXPERIMENTS = 10;
+
 
 	for (const auto& N : elementCounts)
 	{
 		auto listOfRandomNumbers = rng.randList(0, N, N);
 
-		int randomNumberToSearchFor = rng.randRange(0, N);
 
-		std::cout << "Searching the following list: \n";
-		printListOfNumbers(listOfRandomNumbers, " ");
-		std::cout << "For the \"target\" value = " << randomNumberToSearchFor << "\n";
+		for (int i = 0; i < NUMBER_OF_EXPERIMENTS; ++i)
+		{
+			int randomNumberToSearchFor = rng.randRange(0, N);
 
-		int loc = sequentiallySearch(listOfRandomNumbers, randomNumberToSearchFor); //loc as in "location" (index) 
-		if ( loc == -1)
-			std::cout << "NOT FOUND :[!";
-		else
-			std::cout << "The magic numbah is at index = " << loc << "\n";
+			//std::cout << "Searching the following list: \n";
+			//printListOfNumbers(listOfRandomNumbers, " ");
+			//std::cout << "For the \"target\" value = " << randomNumberToSearchFor << "\n";
+
+			Timer t;
+			t.start();
+			int loc = sequentiallySearch(listOfRandomNumbers, randomNumberToSearchFor); //loc as in "location" (index) 
+			t.stop();
+			
+			std::string timeString = std::string(__TIME__); 
+			std::replace(timeString.begin(), timeString.end(), ':', '-');
+			const std::string filename = "timingResults" + timeString + ".csv";
+			
+			std::cout << "Wrote? to filename: " << filename << "\n";
+			t.writeNAndExecutionTimeToFile(N, filename);
+
+		}
 		
-		std::system("pause");
-
 	}
-
+	
 
 }
 
