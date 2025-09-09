@@ -10,60 +10,14 @@
 #include"demos.h"
 #include"utils.h"
 #include "RNGWrapper.h"
+#include "searchAlgos.h"
 #include "Timer.h"
 #include <cassert>
 
-std::string binarySearch(const std::vector<std::string>& names, const std::string& target, int startPosition, 
-	int endPosition)
-{ 
-	if (!std::is_sorted(names.begin(), names.end()))
-	{
-		std::cout << "Hey bro, that array ain't sorted ...\n";
-		return ""; 
-	}
-	//assert(std::is_sorted(names.begin(), names.end()); //givin' me LIP!
-
-	//assert(denom != 0)
-
-	if (startPosition > endPosition)
-	{
-		return "Not found";
-	}
-
-	const int middle = floor((startPosition + endPosition) / 2);
-
-	if (names[middle] == target) 
-	{
-		return "Found it at index " + middle; 
-	}
-
-	//log2(50) = x; 2^x = 50; log2(1000) = x -> 10 
-
-	if (names[middle] > target) 
-	{
-		return binarySearch(names, target, startPosition, middle - 1);
-	}
-
-	if (names[middle] < target) 
-	{
-		return binarySearch(names, target, middle + 1, endPosition);
-	}
-
-}
 
 
 int main()
 {
-
-	//demoTimerFunctionality(); 
-	//__TIME__
-	//benchmarkSequentialSearch(); //it's linear! 
-
-	//benchmarkMiracleSearch(); //that's going to take too long ... 
-	
-	//const int N = 10; 
-
-	//benchmarkRandomSearch(N); 
 
 	constexpr int N = 50; 
 	std::vector<std::string> randomNouns = getSomeRandomNouns(N); 
@@ -77,7 +31,7 @@ int main()
 	}
 
 	
-	std::string wordToSearchFor = "tooth";
+	std::string wordToSearchFor = "tooth"; //N.B. tooth IS in the array 
 
 	binarySearch(randomNouns, wordToSearchFor, 0, randomNouns.size() - 1);
 

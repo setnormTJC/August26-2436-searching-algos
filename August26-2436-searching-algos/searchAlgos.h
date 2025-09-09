@@ -94,33 +94,44 @@ int randomSearch(const std::vector<T>& things, const T& thingToSearchFor)
 
 }
 
+//changed to TEMPLATED function after class!
+template<typename T> 
+std::string binarySearch(const std::vector<T>& things, const T& target, int startPosition,
+	int endPosition)
+{
+	if (!std::is_sorted(things.begin(), things.end()))
+	{
+		std::cout << "Hey bro, that array ain't sorted ...\n";
+		return "";
+	}
+	//assert(std::is_sorted(names.begin(), names.end()); //givin' me LIP!
 
-//std::string binarySearch(const std::vector<std::string>& names, const std::string& target, int startPosition, 
-//	int endPosition)
-//{
-//	if (startPosition > endPosition)
-//	{
-//		return "Not found";
-//	}
-//
-//	const int middle = floor((startPosition + endPosition) / 2);
-//
-//	if (names[middle] == target) {
-//
-//		return "Found it at index " + middle; 
-//	}
-//
-//	if (names[middle] > target) {
-//
-//		return binarySearch(names, target, startPosition, middle - 1);
-//	}
-//
-//	if (names[middle] < target) {
-//
-//		return binarySearch(names, target, middle + 1, endPosition);
-//	}
-//
-//}
+	//assert(denom != 0)
 
+	if (startPosition > endPosition)
+	{
+		return "Not found";
+	}
+
+	const int middle = floor((startPosition + endPosition) / 2);
+
+	if (things[middle] == target)
+	{
+		return "Found it at index " + std::to_string(middle); //added "to_string" after class 
+	}
+
+	//log2(50) = x; 2^x = 50; log2(1000) = x -> 10 
+
+	if (things[middle] > target) //is else preferable here??
+	{
+		return binarySearch(things, target, startPosition, middle - 1);
+	}
+
+	if (things[middle] < target)
+	{
+		return binarySearch(things, target, middle + 1, endPosition);
+	}
+
+}
 
 
