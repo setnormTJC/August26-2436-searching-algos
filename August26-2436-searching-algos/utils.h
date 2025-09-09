@@ -5,3 +5,5 @@
 
 
 void printListOfNumbers(const std::vector<int>& listOfNumbers, const std::string& separator);
+
+const std::string getFilenameWithTimestamp(); 

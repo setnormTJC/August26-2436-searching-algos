@@ -18,9 +18,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="searchAlgos.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="demos.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -50,5 +47,10 @@
     <ClInclude Include="RNGWrapper.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="randomNouns.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
   </ItemGroup>
 </Project>

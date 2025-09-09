@@ -12,3 +12,12 @@ void demoStringSearch(); //function declaration (not a definition) (AKA: prototy
 
 void demoTimerFunctionality(); 
 
+
+void benchmarkSequentialSearch_withTiming(); 
+
+void benchmarkSeqSearch_withComparisonCounts(); 
+
+void benchmarkRandomSearch(const int N); 
+
+std::vector<std::string> getSomeRandomNouns(const int N); 
+

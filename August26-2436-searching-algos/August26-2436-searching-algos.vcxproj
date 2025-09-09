@@ -128,7 +128,6 @@
     <ClCompile Include="demos.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RNGWrapper.cpp" />
-    <ClCompile Include="searchAlgos.cpp" />
     <ClCompile Include="Timer.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
@@ -138,6 +137,9 @@
     <ClInclude Include="searchAlgos.h" />
     <ClInclude Include="Timer.h" />
     <ClInclude Include="utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="randomNouns.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
