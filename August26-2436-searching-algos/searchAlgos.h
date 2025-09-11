@@ -70,28 +70,26 @@ int miracleSearch(const std::vector <T>& thangs,
 	}
 }
 
+/*Precondition: thingToSearchFor MUST be in the list of things (else an infinite loop)*/
 template<typename T> 
 int randomSearch(const std::vector<T>& things, const T& thingToSearchFor)
 {
 	RNGWrapper rng; 
 
 	bool found = false; 
-	int size = things.size() - 1;
 
 	while (!found)
 	{
-		int randomPositionToSearch = rng.randRange(0, size); 
+		int randomPositionToSearch = rng.randRange(0, size - 1); 
 		std::cout << "Looking at position = " << randomPositionToSearch << "\n";
 
 		if (things[randomPositionToSearch] == thingToSearchFor)
 		{
-			return randomPositionToSearch;
+			found = true; 
 		}
-		
 	}
 
-	return -1; 
-
+	return randomPositionToSearch;
 }
 
 //changed to TEMPLATED function after class!
