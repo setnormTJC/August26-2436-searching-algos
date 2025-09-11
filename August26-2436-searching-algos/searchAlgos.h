@@ -78,9 +78,10 @@ int randomSearch(const std::vector<T>& things, const T& thingToSearchFor)
 
 	bool found = false; 
 
+	int randomPositionToSearch{};
 	while (!found)
 	{
-		int randomPositionToSearch = rng.randRange(0, size - 1); 
+		randomPositionToSearch = rng.randRange(0, things.size() - 1);
 		std::cout << "Looking at position = " << randomPositionToSearch << "\n";
 
 		if (things[randomPositionToSearch] == thingToSearchFor)

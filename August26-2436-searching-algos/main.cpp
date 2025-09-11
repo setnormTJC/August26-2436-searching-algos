@@ -18,23 +18,26 @@
 
 int main()
 {
+	//constexpr int desiredStringLength = 4; 
+	//RNGWrapper rng; 
+	//rng.getRandomStringsOfLengthN(desiredStringLength); 
 
-	constexpr int N = 50; 
-	std::vector<std::string> randomNouns = getSomeRandomNouns(N); 
+	constexpr int N = 50; //max number of comparisons for seq. search is? 
+	std::vector<std::string> randomNouns = getSomeRandomNouns(N);
+
+	std::string wordToSearchFor = "responsibility"; //N.B. (nota bene) responsibility IS in the array 
+	//std::cout << binarySearch(randomNouns, wordToSearchFor, 0, randomNouns.size() - 1) << "\n";		
+
 
 	std::sort(randomNouns.begin(), randomNouns.end()); //robust 
 	
-	std::cout << "Did the SORT work?!\n";
-	for (const auto& noun : randomNouns)
+	if (std::binary_search(randomNouns.begin(), randomNouns.end(), wordToSearchFor))
 	{
-		std::cout << noun << "\n";
+		std::cout << "Found\n";
 	}
 
+
+
 	
-	std::string wordToSearchFor = "tooth"; //N.B. tooth IS in the array 
-
-	binarySearch(randomNouns, wordToSearchFor, 0, randomNouns.size() - 1);
-
-
 }
 

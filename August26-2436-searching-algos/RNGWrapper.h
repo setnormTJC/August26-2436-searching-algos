@@ -1,6 +1,7 @@
 #pragma once
 
 #include<random> 
+#include<string> 
 #include<vector>
 
 
@@ -22,5 +23,9 @@ public:
 
 	/*Generates a random number between (inclusive?) MIN and MAX*/
 	int randRange(const int min, const int max);
+
+	/*Note that this function creates a "pool" of chars from a - z
+	@param N -> CANNOT be > 26 (for now)*/
+	std::vector<std::string> getRandomStringsOfLengthN(const int N); 
 };
 

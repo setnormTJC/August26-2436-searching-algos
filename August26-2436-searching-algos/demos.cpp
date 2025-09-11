@@ -131,7 +131,7 @@ std::vector<std::string> getSomeRandomNouns(const int N)
 {
     std::vector<std::string> randomNouns; 
 
-    std::ifstream inputFile("randomNouns.txt");
+    std::ifstream inputFile("randomNouns.txt"); //"Relative" filepath 
 
     if (!inputFile.is_open())
     {
